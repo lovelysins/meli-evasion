@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr" data-resolution="portrait">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+:root { --ground:#000; --ink:#fff; --gold:#d4af37; --serif: Georgia, "Times New Roman", serif; --sans: "Helvetica Neue", Arial, sans-serif; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1080px; height:1920px; overflow:hidden; background:var(--ground); }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:var(--ground); font-family:var(--sans); color:var(--ink); }
+.vid { position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; }
+.shade { position:absolute; inset:0; background:rgba(0,0,0,.55); }
+.grad { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.35) 28%, rgba(0,0,0,0) 48%); }
+.flash { position:absolute; inset:0; background:#fff; }
+.center { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 80px; }
+.hook-l { font-family:var(--serif); font-weight:700; font-size:84px; line-height:1.12; letter-spacing:.02em; white-space:nowrap; }
+.gold { color:var(--gold); }
+.teaser-t { font-family:var(--serif); font-weight:700; font-size:112px; letter-spacing:.04em; color:var(--gold); }
+.vline { position:absolute; left:64px; top:300px; width:4px; height:900px; background:linear-gradient(to bottom, var(--gold), rgba(212,175,55,0)); }
+.badge { background:rgba(0,0,0,.6); position:absolute; top:230px; right:64px; font-size:34px; letter-spacing:.3em; padding:10px 22px; border:2px solid var(--gold); color:var(--gold); }
+.label { text-shadow:0 2px 14px rgba(0,0,0,.85); position:absolute; left:96px; right:96px; top:1130px; }
+.lab-tag { font-family:var(--sans); font-weight:700; font-size:40px; letter-spacing:.18em; color:var(--gold); }
+.lab-mood { font-family:var(--serif); font-style:italic; font-weight:700; font-size:96px; line-height:1.1; margin-top:10px; }
+.lab-piece { font-size:38px; line-height:1.3; margin-top:22px; color:#f1f1f1; }
+.lab-brand { font-size:34px; letter-spacing:.3em; text-transform:uppercase; margin-top:10px; color:var(--gold); }
+.outro { background:#000; }
+.out-l { font-family:var(--serif); font-weight:700; font-size:104px; line-height:1.1; }
+.out-rule { width:360px; height:3px; background:var(--gold); margin:48px 0 36px; }
+.out-sub { font-size:40px; letter-spacing:.14em; text-transform:uppercase; color:#ddd; }
+.out-cta { font-family:var(--serif); font-style:italic; font-size:64px; color:var(--gold); margin-top:60px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="31" data-width="1080" data-height="1920">
+<video id="v-hook" class="clip vid" src="assets/IMG_1296.MOV" data-start="0" data-duration="3" data-media-start="3" data-track-index="1" muted playsinline style="z-index:2"></video>
+<div id="hook-shade" class="clip shade" data-start="0" data-duration="3" data-track-index="2" style="z-index:8"></div>
+<div id="hook" class="clip center" data-start="0" data-duration="3" data-track-index="3" style="z-index:14"><div class="hook-l">LE NOIR NE VA PAS</div><div class="hook-l gold">À TOUT LE MONDE</div></div>
+<video id="v-teaser-0" class="clip vid" src="assets/IMG_1292.MOV" data-start="3" data-duration="1" data-media-start="2.5" data-track-index="4" muted playsinline style="z-index:5"></video>
+<video id="v-teaser-1" class="clip vid" src="assets/IMG_1294.MOV" data-start="4" data-duration="1" data-media-start="2.5" data-track-index="5" muted playsinline style="z-index:6"></video>
+<video id="v-teaser-2" class="clip vid" src="assets/IMG_1296.MOV" data-start="5" data-duration="1" data-media-start="2.5" data-track-index="6" muted playsinline style="z-index:7"></video>
+<div id="teaser-shade" class="clip shade" data-start="3" data-duration="3" data-track-index="7" style="z-index:13"></div>
+<div id="teaser" class="clip center" data-start="3" data-duration="3" data-track-index="8" style="z-index:19"><div class="teaser-t">BRILLANT OU MAT ?</div></div>
+<video id="v-l1-face" class="clip vid" src="assets/IMG_1292.MOV" data-start="6" data-duration="3.5" data-media-start="1" data-track-index="9" muted playsinline style="z-index:10"></video>
+<video id="v-l1-dos" class="clip vid" src="assets/IMG_1293.MOV" data-start="9.5" data-duration="3.5" data-media-start="1" data-track-index="10" muted playsinline style="z-index:11"></video>
+<div id="grad-l1" class="clip grad" data-start="6" data-duration="7" data-track-index="11" style="z-index:17"></div>
+<div id="flash-l1" class="clip flash" data-start="6" data-duration="0.35" data-track-index="12" style="z-index:43"></div>
+<div id="vline-l1" class="clip vline" data-start="6" data-duration="7" data-track-index="13" style="z-index:24"></div>
+<div id="badge-face-l1" class="clip badge" data-start="6" data-duration="3.5" data-track-index="14" style="z-index:25">FACE</div>
+<div id="badge-dos-l1" class="clip badge" data-start="9.5" data-duration="3.5" data-track-index="15" style="z-index:26">DOS</div>
+<div id="lab-l1" class="clip label" data-start="6" data-duration="7" data-track-index="16" style="z-index:27">
+    <div class="lab-tag">1 · NOIR BRILLANT</div><div class="lab-mood">La verticale</div>
+    <div class="lab-piece">Top dentelle · Jupe Inspiration Divine</div><div class="lab-brand">Scandale</div></div>
+<video id="v-l2-face" class="clip vid" src="assets/IMG_1294.MOV" data-start="13" data-duration="3.5" data-media-start="1" data-track-index="17" muted playsinline style="z-index:18"></video>
+<video id="v-l2-dos" class="clip vid" src="assets/IMG_1295.MOV" data-start="16.5" data-duration="3.5" data-media-start="1" data-track-index="18" muted playsinline style="z-index:19"></video>
+<div id="grad-l2" class="clip grad" data-start="13" data-duration="7" data-track-index="19" style="z-index:25"></div>
+<div id="flash-l2" class="clip flash" data-start="13" data-duration="0.35" data-track-index="20" style="z-index:51"></div>
+<div id="vline-l2" class="clip vline" data-start="13" data-duration="7" data-track-index="21" style="z-index:32"></div>
+<div id="badge-face-l2" class="clip badge" data-start="13" data-duration="3.5" data-track-index="22" style="z-index:33">FACE</div>
+<div id="badge-dos-l2" class="clip badge" data-start="16.5" data-duration="3.5" data-track-index="23" style="z-index:34">DOS</div>
+<div id="lab-l2" class="clip label" data-start="13" data-duration="7" data-track-index="24" style="z-index:35">
+    <div class="lab-tag">2 · NOIR BAROQUE</div><div class="lab-mood">La provoc</div>
+    <div class="lab-piece">Robe Liaison Fatale</div><div class="lab-brand">Scandale</div></div>
+<video id="v-l3-face" class="clip vid" src="assets/IMG_1296.MOV" data-start="20" data-duration="3.5" data-media-start="1" data-track-index="25" muted playsinline style="z-index:26"></video>
+<video id="v-l3-dos" class="clip vid" src="assets/IMG_1297.MOV" data-start="23.5" data-duration="3.5" data-media-start="1" data-track-index="26" muted playsinline style="z-index:27"></video>
+<div id="grad-l3" class="clip grad" data-start="20" data-duration="7" data-track-index="27" style="z-index:33"></div>
+<div id="flash-l3" class="clip flash" data-start="20" data-duration="0.35" data-track-index="28" style="z-index:59"></div>
+<div id="vline-l3" class="clip vline" data-start="20" data-duration="7" data-track-index="29" style="z-index:40"></div>
+<div id="badge-face-l3" class="clip badge" data-start="20" data-duration="3.5" data-track-index="30" style="z-index:41">FACE</div>
+<div id="badge-dos-l3" class="clip badge" data-start="23.5" data-duration="3.5" data-track-index="31" style="z-index:42">DOS</div>
+<div id="lab-l3" class="clip label" data-start="20" data-duration="7" data-track-index="32" style="z-index:43">
+    <div class="lab-tag">3 · NOIR MÉTALLIQUE</div><div class="lab-mood">L'éclat</div>
+    <div class="lab-piece">Robe effet métal · Épaulettes perles de rocaille</div><div class="lab-brand">Mondin</div></div>
+<div id="outro" class="clip center outro" data-start="27" data-duration="4" data-track-index="33" style="z-index:74">
+  <div class="out-l">TU ES LA STAR</div><div class="out-l gold">DE TA SOIRÉE</div>
+  <div class="out-rule"></div><div class="out-sub">Notre œil de styliste lingerie</div><div class="out-cta">Dis-moi : 1, 2 ou 3 ?</div></div>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+tl.from("#hook .hook-l", { y: 40, opacity: 0, duration: 0.5, stagger: 0.25, ease: "power3.out" }, 0.15);
+tl.from("#teaser .teaser-t", { scale: 0.85, opacity: 0, duration: 0.45, ease: "back.out(1.6)" }, 3.1);
+tl.fromTo("#flash-l1", { opacity: 0.9 }, { opacity: 0, duration: 0.3, ease: "power2.out" }, 6);
+tl.from("#vline-l1", { scaleY: 0, transformOrigin: "top", duration: 0.9, ease: "power3.out" }, 6.1);
+tl.from("#lab-l1 > div", { y: 30, opacity: 0, duration: 0.45, stagger: 0.12, ease: "power3.out" }, 6.2);
+tl.fromTo("#v-l1-face", { scale: 1.0 }, { scale: 1.06, duration: 3.5, ease: "none" }, 6);
+tl.fromTo("#v-l1-dos", { scale: 1.0 }, { scale: 1.06, duration: 3.5, ease: "none" }, 9.5);
+tl.fromTo("#flash-l2", { opacity: 0.9 }, { opacity: 0, duration: 0.3, ease: "power2.out" }, 13);
+tl.from("#vline-l2", { scaleY: 0, transformOrigin: "top", duration: 0.9, ease: "power3.out" }, 13.1);
+tl.from("#lab-l2 > div", { y: 30, opacity: 0, duration: 0.45, stagger: 0.12, ease: "power3.out" }, 13.2);
+tl.fromTo("#v-l2-face", { scale: 1.0 }, { scale: 1.06, duration: 3.5, ease: "none" }, 13);
+tl.fromTo("#v-l2-dos", { scale: 1.0 }, { scale: 1.06, duration: 3.5, ease: "none" }, 16.5);
+tl.fromTo("#flash-l3", { opacity: 0.9 }, { opacity: 0, duration: 0.3, ease: "power2.out" }, 20);
+tl.from("#vline-l3", { scaleY: 0, transformOrigin: "top", duration: 0.9, ease: "power3.out" }, 20.1);
+tl.from("#lab-l3 > div", { y: 30, opacity: 0, duration: 0.45, stagger: 0.12, ease: "power3.out" }, 20.2);
+tl.fromTo("#v-l3-face", { scale: 1.0 }, { scale: 1.06, duration: 3.5, ease: "none" }, 20);
+tl.fromTo("#v-l3-dos", { scale: 1.0 }, { scale: 1.06, duration: 3.5, ease: "none" }, 23.5);
+tl.from("#outro .out-l", { y: 40, opacity: 0, duration: 0.5, stagger: 0.2, ease: "power3.out" }, 27.1);
+tl.from("#outro .out-rule", { scaleX: 0, duration: 0.6, ease: "power3.out" }, 27.7);
+tl.from("#outro .out-sub, #outro .out-cta", { opacity: 0, y: 20, duration: 0.5, stagger: 0.2 }, 27.9);
+window.__timelines["main"] = tl;
+tl.seek(0);
+</script>
+</body>
+</html>
